@@ -11,6 +11,8 @@
 }
 
 body {
+    max-width: 1000px;
+    min-width: 300px;
     background: linear-gradient(to bottom, rgb(54, 54, 54), white);
     height: 100vh;
     
