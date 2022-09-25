@@ -54,7 +54,7 @@ body {
 
 .tecla:hover{
     background-color: rgb(38, 123, 214);
-    transition: 0.7s;
+    transition: 0.6s;
 }
 
 .tecla:active {

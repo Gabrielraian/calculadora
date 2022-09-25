@@ -4,7 +4,7 @@ let valueOne = 0
 let valueTwo = 0
 let operationString = '#'
 function numbers(numeros) {
-    let texto = document.querySelector('p.resultado');
+    const texto = document.querySelector('p.resultado');
     texto.innerHTML += `${numeros}`;
     listNumbers.push(numeros)
     valueOne = listNumbers.join('')
@@ -18,7 +18,7 @@ function zerar(lista) {
 }
 
 function clean() {
-    let texto = document.querySelector('p.resultado')
+    const texto = document.querySelector('p.resultado')
     texto.innerHTML = ''
     total = 0
     valueOne = 0
@@ -27,7 +27,7 @@ function clean() {
 
 
 function sum() {
-    let texto = document.querySelector('p.resultado')
+    const texto = document.querySelector('p.resultado')
     texto.innerHTML += '+'
     total += valueOne
     operationString = '+'
@@ -35,7 +35,7 @@ function sum() {
 }
 
 function subt(valor2) {
-    let texto = document.querySelector('p.resultado')
+    const texto = document.querySelector('p.resultado')
     texto.innerHTML += '-'
     if (valueTwo == 0) {
         valueTwo = valueOne
@@ -51,15 +51,36 @@ function subt(valor2) {
     zerar(listNumbers)
 }
 
+function mult(valor2) {
+    const texto = document.querySelector('p.resultado')
+    texto.innerHTML += 'x'
+    if(valueTwo == 0) {
+        valueTwo = valueOne
+    }
+
+    let value2 = valor2
+    if(value2 != undefined) {
+        total = valueTwo * value2
+    }
+
+    operationString = '*'
+    
+    zerar(listNumbers)
+}
+
+
 
 function resultado() {
-    let texto = document.querySelector('p.resultado')
+    const texto = document.querySelector('p.resultado')
     switch(operationString != '#') {
         case (operationString === '+'):
             sum(valueOne)
             break
         case(operationString === '-'):
             subt(valueOne)
+            break
+        case(operationString ==='*'):
+            mult(valueOne)
             break
         default:
             alert('Nenhum tipo de operação')
